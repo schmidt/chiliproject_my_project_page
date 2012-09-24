@@ -1,8 +1,9 @@
 Feature: Custom Overview Page
   Background:
-    Given there is a standard cost control project named "Cost Project"
-    And I am admin
-    And I am on the overview page for the project "Cost Project"$/
+    Given there is 1 project with:
+        | name | ecookbook |
+      And I am logged in as "admin"
+      And I am on the overview page for the project "ecookbook"
 
   Scenario: Dragging, adding and deleting elements
     Given I start editing the overview page
