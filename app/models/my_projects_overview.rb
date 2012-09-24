@@ -24,7 +24,7 @@ class MyProjectsOverview < ActiveRecord::Base
   def after_initialize
     hs = attributes
     DEFAULTS.each_pair do |k, v|
-      if hs[k].blank?
+      if hs[k].nil?
         self.send("#{k}=", v)
       end
     end
