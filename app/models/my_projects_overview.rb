@@ -25,7 +25,6 @@ class MyProjectsOverview < ActiveRecord::Base
     hs = attributes
     DEFAULTS.each_pair do |k, v|
       if hs[k].blank?
-        update_attribute(k, v.to_yaml)
         self.send("#{k}=", v)
       end
     end
